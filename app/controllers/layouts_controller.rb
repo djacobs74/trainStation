@@ -18,6 +18,10 @@ class LayoutsController < ApplicationController
         @layout = Layout.find(params[:id])
     end
 
+    def edit
+        @layout = Layout.find(params[:id])
+    end
+
     private
 
     def layout_params
