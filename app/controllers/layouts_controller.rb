@@ -1,4 +1,6 @@
 class LayoutsController < ApplicationController
+    before_action :authenticate_user!, only: [:new, :create]
+    
     def index
         @layouts = Layout.all
     end
@@ -8,13 +10,13 @@ class LayoutsController < ApplicationController
     end
 
     def create
-        Layout.create(layout_params)
+        current_user.layouts.create(layout_params)
         redirect_to root_path
     end
 
     private
 
-    def place_params
+    def layout_params
         params.require(:layout).permit(:name, :description)
     end
 end
