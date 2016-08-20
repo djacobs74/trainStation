@@ -1,2 +1,43 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+
+    background: url('/assets/retina_wood.png')
+}
+
+
+
+.navbar.navbar-inverse {
+  background:url('/assets/pool_table.png');
+  border-radius: 0;
+  box-shadow: 0px 1px 3px #2a2a2a;
+  
+}
+
+.navbar-inverse .navbar-brand {
+  color: #F0F0E9;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  
+}
+
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  background:url('/assets/old_map.png');
+  
+}
+
+h1 {
+    font-family: 'Ewert', cursive;
+
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+
