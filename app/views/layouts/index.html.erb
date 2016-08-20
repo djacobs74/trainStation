@@ -1,1 +1,6 @@
-<h1>Welcome to my Awesome Web App. All aboard!</h1>
+<% @layouts.each do |layout| %>
+    <div>
+        <h1><%= layout.name %></h1><br />
+        <p><%= layout.description %></p><br />
+    </div>
+<% end %>
