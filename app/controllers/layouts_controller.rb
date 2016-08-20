@@ -14,6 +14,10 @@ class LayoutsController < ApplicationController
         redirect_to root_path
     end
 
+    def show
+        @layout = Layout.find(params[:id])
+    end
+
     private
 
     def layout_params
