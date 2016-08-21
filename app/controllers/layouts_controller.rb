@@ -22,6 +22,18 @@ class LayoutsController < ApplicationController
         @layout = Layout.find(params[:id])
     end
 
+    def update
+        @layout = Layout.find(params[:id])
+        @layout.update_attributes(layout_params)
+        redirect_to layout_path
+    end
+
+    def destroy
+        @place = Place.find(params[:id])
+        @place.destroy
+        redirect_to root_path
+    end
+
     private
 
     def layout_params

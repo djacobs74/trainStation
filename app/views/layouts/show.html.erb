@@ -4,5 +4,6 @@
   <p><%= @layout.description %></p>
   <div class="pull-right">
     <%= link_to 'Edit', edit_layout_path(@layout), class: 'btn btn-primary' %>
+    <%= link_to 'Destroy', layout_path(@layout), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
   </div>
 </div>
