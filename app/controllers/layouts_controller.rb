@@ -1,5 +1,5 @@
 class LayoutsController < ApplicationController
-    before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
     
     def index
         @layouts = Layout.all
@@ -10,8 +10,12 @@ class LayoutsController < ApplicationController
     end
 
     def create
-        current_user.layouts.create(layout_params)
-        redirect_to root_path
+        @layout = current_user.layouts.create(layout_params)
+        if @layout.valid?
+            redirect_to root_path
+        else
+            render :new, status: :unprocessable_entity
+        end
     end
 
     def show
@@ -33,11 +37,19 @@ class LayoutsController < ApplicationController
         end
 
         @layout.update_attributes(layout_params)
-        redirect_to layout_path
+        if @layout.valid?
+            redirect_to root_path
+        else
+            render :edit, status: :unprocessable_entity
+        end
     end
 
     def destroy
         @layout = Layout.find(params[:id])
+        if @layout.user != current_user
+            return render text: 'Not Allowed', status: :forbidden
+        end
+
         @layout.destroy
         redirect_to root_path
     end
