@@ -1,4 +1,5 @@
 class Layout < ActiveRecord::Base
     belongs_to :user
-    validates :name, presence: true
+    has_many :comments
+    validates :name, :description, presence: true
 end

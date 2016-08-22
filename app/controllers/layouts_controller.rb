@@ -20,6 +20,7 @@ class LayoutsController < ApplicationController
 
     def show
         @layout = Layout.find(params[:id])
+        @comment = Comment.new
     end
 
     def edit
