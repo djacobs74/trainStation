@@ -1,6 +1,9 @@
 TrainStation::Application.routes.draw do
   devise_for :users
   root 'layouts#index'
+  resources :layouts do
+    resources :comments, only: :create
+  end
 
   resources :layouts
   # The priority is based upon order of creation: first created -> highest priority.
