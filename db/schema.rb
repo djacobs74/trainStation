@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822002713) do
+ActiveRecord::Schema.define(version: 20160828204849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20160822002713) do
   end
 
   add_index "layouts", ["user_id"], name: "index_layouts_on_user_id", using: :btree
+
+  create_table "photos", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture"
+    t.integer  "layout_id"
+    t.integer  "user_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

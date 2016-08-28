@@ -3,9 +3,10 @@ TrainStation::Application.routes.draw do
   root 'layouts#index'
   resources :layouts do
     resources :comments, only: :create
+    resources :photos, only: :create
   end
 
-  resources :layouts
+  resources :users, only: :show
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

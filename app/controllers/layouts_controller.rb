@@ -21,6 +21,7 @@ class LayoutsController < ApplicationController
     def show
         @layout = Layout.find(params[:id])
         @comment = Comment.new
+        @photo = Photo.new
     end
 
     def edit

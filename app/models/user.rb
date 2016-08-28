@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
          has_many :layouts
          has_many :comments
+         has_many :photos
 end

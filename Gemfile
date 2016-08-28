@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.0.6'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -34,6 +34,8 @@ gem 'sprockets', '2.11.0'
 gem 'simple_form'
 
 gem 'devise', '>= 3.2.4'
+
+gem 'carrierwave'
 
 gem 'rails_12factor', group: :production
 
