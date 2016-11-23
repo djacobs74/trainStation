@@ -56,16 +56,6 @@
 
  <h1>Pictures</h1>
 
-<% @layout.photos.each do |photo| %>
-      <div class="booyah-box col-xs-6 col-xs-offset-3 picture-text">
-        <%= image_tag photo.picture %>
-        
-      </div>
-<% end %>
-
-
-
-
 
 
 
@@ -96,3 +86,10 @@
     <button class="btn btn-primary" data-toggle="modal" data-target="#PictureModal">
         Add a Photo
       </button>
+
+<% @layout.photos.each do |photo| %>
+      <div class="booyah-box col-xs-6 col-xs-offset-3 img-responsive">
+        <%= image_tag photo.picture %>
+        
+      </div>
+<% end %>
