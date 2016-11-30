@@ -39,6 +39,10 @@ gem 'carrierwave'
 
 gem 'mini_magick', '~> 4.3.1'
 
+gem "figaro"
+
+gem "fog"
+
 gem 'rails_12factor', group: :production
 
 group :doc do

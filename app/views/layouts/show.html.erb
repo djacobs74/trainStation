@@ -54,8 +54,8 @@
 
 <h1>Pictures</h1>
   <% @layout.photos.each do |photo| %>
-    <div class="booyah-box col-xs-6 col-xs-offset-3 img-responsive">
-      <%= image_tag photo.picture %>
+    <div class="booyah-box col-xs-8 col-xs-offset-2">
+      <%= image_tag photo.picture, :class => "img-responsive" %>
     </div>
   <% end %>
 
